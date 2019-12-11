@@ -1,22 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-velocities = np.loadtxt("/home/asha/SLAMDuck/data_dec_02/velocity_time_luthor_2019-12-02-18-53-07\
-/luthor_2019-12-02-18-53-07_interpolated_wheel_velocities.txt")
-time = np.loadtxt("/home/asha/SLAMDuck/data_dec_02/velocity_time_luthor_2019-12-02-18-53-07\
-/luthor_2019-12-02-18-53-07_interpolated_time.txt")
+velocities = np.loadtxt("/home/asha/SLAMDuck/data_dec_10/velocity_time_luthor_2019-12-10-22-55-17\
+/luthor_2019-12-10-22-55-17_interpolated_wheel_velocities.txt")
+time = np.loadtxt("/home/asha/SLAMDuck/data_dec_10/velocity_time_luthor_2019-12-10-22-55-17\
+/luthor_2019-12-10-22-55-17_interpolated_time.txt")
 T = 0.034
-range_bearing_dir = "/home/asha/SLAMDuck/data_dec_02/range_bearing_luthor_2019-12-02-18-53-07/"
-video_output_dir = 'video_luthor_2019-12-02-18-53-07/'
+range_bearing_dir = "/home/asha/SLAMDuck/data_dec_10/range_bearing_luthor_2019-12-10-22-55-17/"
+video_output_dir = 'video_output_luthor_2019-12-10-22-55-17/'
 
 # note that we will call the the estimates from the prediction step as x_check and P_check
 # whereas the corrected pose shall be called as x_hat and P_hat
-size = 3+20*2
+size = 3+28*2
 # initial conditions
 #we have 8 landmarks, pose <m_x,m_y>
 #state vector is 3 + 8*2, where 3 for the robot's pose and 8*2 for x and y coordinates of landmark
 x_0_hat = np.zeros((size,1))
-init_landmark_cov =[1e1]*20*2
+init_landmark_cov =[1e1]*28*2
 P_0_hat = np.diag([0,0,0]+init_landmark_cov)
 #the initial cov for the landmarks is inf because we have no idea where they are
 
@@ -75,7 +75,8 @@ P_estimated = [P_0_hat] #COVARIANCE
 frame_count = 0
 previously_observed_landmarks =[]
 #landmark_names = [23,86,25,61,96,7,32,11,79,31]
-landmark_names = [23,31,86,79,11,25,24,32,61,96,7,30,57,87,78,10,85,65,80,9]
+#landmark_names = [23,31,86,79,11,25,24,32,61,96,7,30,57,87,78,10,85,65,80,9]
+landmark_names = [24,96,25,86,7,23,65,30,57,87,80,85,32,78,10,31,79,9,11,61,0,1,2,3,4,5,12,8]
 d = 0.06 #distance between camera and axle
 
 # yolo_x = [x_0_hat] #nothing - ignore
