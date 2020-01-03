@@ -44,6 +44,6 @@ https://docs.duckietown.org/daffy/opmanual_duckietown/out/dt_ops_preliminaries.h
 
 Our final setup is as shown:
 
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/top_view_duckietown.jpg" width="600" height="400">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/top_view_duckietown.jpg" width="500" height="400">
 
 ###
