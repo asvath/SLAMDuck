@@ -31,7 +31,18 @@ landmark at time step k is governed by:
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/measurement.PNG" width="400" height="100">
 
 ### SLAMDuck Algorithm Theory
-
 Our SLAMDuck algorithm then follows the EKF SLAM algorithm described in S. Thrun, W. Burgard, and D. Fox Probabalistic Robotics (2005). chapter 10 page 314. Where our motion model is used in the prediction step and our measurement model is used in the
 correction step. Our algorithm outputs the estimate of the true pose of the Duckiebot at timesteps k1:k2 and the estimate of the
 true positions of the N static landmarks with respect to Fw.
+
+## Method
+### Setup
+We followed all setup, including calibration steps as described Duckiebot operationmanual available at:
+https://docs.duckietown.org/daffy/opmanual_duckiebot/out/index.html
+Our Duckietown was built to according to the specifications described in the Duckietown operation manual available at
+https://docs.duckietown.org/daffy/opmanual_duckietown/out/dt_ops_preliminaries.html.
+
+Our final setup is as shown:
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/top_view_duckietown.jpg" width="400" height="100">
+
+###
