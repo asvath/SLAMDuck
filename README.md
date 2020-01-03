@@ -43,6 +43,6 @@ Our Duckietown was built to according to the specifications described in the Duc
 https://docs.duckietown.org/daffy/opmanual_duckietown/out/dt_ops_preliminaries.html.
 
 Our final setup is as shown:
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/top_view_duckietown.jpg" width="400" height="100">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/top_view_duckietown.jpg" width="600" height="600">
 
 ###
