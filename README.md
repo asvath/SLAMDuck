@@ -1,5 +1,5 @@
 # SLAMDuck 
-We provide a brief description of our project (Full report will be uploaded after grading has been completed). For details on the code, please see the Code section.
+We provide a brief description of our project (Full report will be uploaded after grading has been completed). For details on the code, please see the Data acquision and Code sections.
 
 ## Introduction
 The goal of our project is to explore the recursive Extended Kalman Filter (EKF) SLAM algorithm. In order to achieve this goal, we draw on our motivation to acquire hands-on robotics experience. We obtained a robotics starter kit from the Duckietown foundation (https://www.duckietown.org/). We utilized the starter kit to build a robot (Duckiebot) and a toy city
@@ -43,7 +43,10 @@ Our Duckietown was built to according to the specifications described in the Duc
 https://docs.duckietown.org/daffy/opmanual_duckietown/out/dt_ops_preliminaries.html.
 
 Our final setup is as shown:
-
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/top_view_duckietown.jpg" width="500" height="400">
 
-###
+We included cardboard buildings, trees, a pool and 5 toy ducks, as shown purely for aesthetic and entertainment purposes.
+
+### Data Acquision and preprocessing 
+We drove our Duckiebot around Duckietown for two loops in an anti-clockwise direction with start position as depicted in the figure above. The drive was done manually by utilizing the virtual joystick through the Duckietown shell. We logged the data at nominal rate of 30 Hz. The logged data comes in a rosbag (.bag). format containing the left and right velocities of the wheels and the images captured. As the wheel velocities and the images were acquired at different timestamps, we linearly interpolated the wheel velocities at the image observations timestamps. As part of preprocessing, the images were undistorted using the intrinsic camera calibration matrix and the distortion coefficients acquired during camera calibration. We then used the publicly available AprilTags detection library apriltags3
+https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images. The detection outputs the relative position of the tags with respect to the Duckiebot’s camera. Using the relative position of the tags we then calculated the range and bearing from the camera to the tags. The 15-degree tilt of our camera was taken into account during the calculations. The range and bearing information were then stored in text files to be used by the SLAMDuck algorithmduring the correction step.
