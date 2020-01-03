@@ -25,5 +25,5 @@ The Duckiebot is a differential drive robot. Hence, using a differential drive m
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/motion.PNG" width="400" height="200">
 
 ### Measurement Model
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/measurement.PNG" width="200" height="200">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/measurement.PNG" width="400" height="100">
 
