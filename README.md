@@ -19,3 +19,6 @@ To tackle the problem of SLAMDuck, we define the following frames:
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/frames.PNG" width="500" height="300">
 
+### Motion 
+The Duckiebot is a differential drive robot. Hence, using a differential drive model, we determine the translational, vk, and rotational, wk, velocities of the Duckiebot. Next, we define xk to be a 3 + 2N state vector consisting of the Duckiebot’s pose (x,y,theta), and each landmark’s position (lx,ly) at timestep, k; where l denotes the lth landmark. All the parameters in the state vector are relative to Fw. The motion model is then governed by:
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/motion.PNG" width="500" height="300">
