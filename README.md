@@ -25,5 +25,13 @@ The Duckiebot is a differential drive robot. Hence, using a differential drive m
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/motion.PNG" width="400" height="200">
 
 ### Measurement Model
+The measurements comprise of the range and bearing measurement of the landmark AprilTags relative to Fc. These measurements were extracted from the detection of the AprilTags in the camera images (discussed under code section). The observation model for the lth
+landmark at time step k is governed by:
+
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/measurement.PNG" width="400" height="100">
 
+### SLAMDuck Algorithm Theory
+
+Our SLAMDuck algorithm then follows the EKF SLAM algorithm described in S. Thrun, W. Burgard, and D. Fox Probabalistic Robotics (2005). chapter 10 page 314. Where our motion model is used in the prediction step and our measurement model is used in the
+correction step. Our algorithm outputs the estimate of the true pose of the Duckiebot at timesteps k1:k2 and the estimate of the
+true positions of the N static landmarks with respect to Fw.
