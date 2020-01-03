@@ -17,4 +17,5 @@ To tackle the problem of SLAMDuck, we define the following frames:
 * Duckie frame, FD: frame that is attached to center between the left and right wheels of the Duckiebot. The x-axis is in the direction of the heading of the Duckiebot
 * Camera frame, Fc: frame that is attached to the Duckiebot’s camera and distance, d, away from FD. The orientation of Fc is the same as FD. All measurement of landmark AprilTags are made relative to Fc
 
-![alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/frames.PNG)
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/frames.PNG" width="800" height="600">
+
