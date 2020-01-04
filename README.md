@@ -80,7 +80,7 @@ produces overconfident estimates of the Duckiebot’s pose in the x and y direct
 envelope and are skewed in one direction. This is probably due to a systematic (i.e. non-normal) error in our range
 measurements.
 
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors.PNG" width="500" height="650">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors.PNG" width="500" height="700">
 
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
