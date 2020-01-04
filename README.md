@@ -60,15 +60,15 @@ were averaged.
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/reflective_marker_robot.jpg" width="300" height="450"> <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/reflective_marker_landmark.jpg" width="300" height="450"> 
 
-### Results 
-#### Wheel odometry
+## Results 
+### Wheel odometry
 We drove our Duckiebot around Duckietown for two loops in an anti-clockwise direction. The trajectory of our Duckiebot based on odometry
 and our motion model is shown in the figure below:
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/wheel_odometry.jpg" width="500" height="400">
 The figure highlights the inaccuracy of our odometry (see Section VIII.A for more details.) The Duckiebot does not appear to travel for two loops and it appears to be travelling in a clockwise direction (as opposed to the actual counterclockwise direction) starting at
 position (0,0). The goal of running SLAMDuck is to correct this trajectory. 
 
-#### Evaluation of SLAMDuck
+### Evaluation of SLAMDuck
 After running SLAMDuck, we compared our corrected trajectory to the ground truth obtained from vicon. Final Results. The figure below shows the entirety of Duckiebot’s corrected trajectory in grey. The ground truth is shown in blue. We also plotted our landmark estimates as red circles and the ground truth landmark positions in blue. The ground truth was compared by forcing the t=0 timestep to overlap perfectly with the calculated trajectory. Our corrected trajectory shows the Duckiebot travelling around Duckietown for two loops. While the shape of the trajectory is similar to the ground truth, we see that our corrected trajectory is much bigger. In addition, our landmark positions are far from the ground truth position with average errors in the x and y directions of -0.27 m and -0.23 m respectively.
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/tracj.jpg" width="500" height="400">
@@ -82,7 +82,7 @@ measurements.
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors.PNG" width="500" height="800">
 
-#### Analysis of range measurements
+### Analysis of range measurements
 We suspect that our range measurements suffer from a systematic error. The range measurements of AprilTag landmarks closer to the Duckiebot are probably more accurate than those further way due to inverse linear relationship between size and distance. To investigate this, we have run the SLAMDuck algorithm again, but only considering range measurements that are less than 90 cm away from our
 Duckiebot as compared to the previous section, where we used all measurements. Figure below shows an improved corrected trajectory of our Duckiebot. Our trajectory shows a smaller, less lopsided loop compared to that in the previous section.
 
@@ -95,7 +95,10 @@ measurements improves the accuracy of our result. Correspondingly, we conclude t
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors_90.PNG" width="500" height="800">
 
-### Code
+## Future work
+Possible improvements to our experiment could entail installing wheel encoders to the system. Instead of wheel encoders, we could also try visual odometry to estimate the pose of the Duckiebot during the SLAMDuck prediction step. This approach will not add additional cost to the Duckiebot. We could also add more landmark AprilTags to improve the accuracy ofour estimates. We should also investigate the accuracy of the AprilTags detection library by physically measuring the range from our Duckiebot to the AprilTags and comparing it to the range obtained from the library. Next, the feasibility of running SLAMDuck in real time should be verified.
+
+## Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
 
 * linear interploation of wheels
