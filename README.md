@@ -88,6 +88,12 @@ Duckiebot as compared to the previous section, where we used all measurements. F
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/trac_90.png" width="500" height="400">
 
+From the error plots we see an improvement in our estimates of the Duckiebot’s pose in x and y. Both errors are smaller than
+in the previous section. In addition, both errors are closer to staying within the three-sigma uncertainty envelope and more
+symmetric. However, we see a decreased performance in our heading estimates. We conclude that setting a threshold on the range
+measurements improves the accuracy of our result. Correspondingly, we conclude that the nearer the landmark AprilTags are, the more accurate the range measurements are. As part of future work as discussed in Section IX, we should further investigate the threshold for range measurements. We could also improve our accuracy by increasing the number of AprilTag Landmarks and placing them closer together. An improved algorithm which uses a proportional uncertainty for the range measurements may also be possible.
+
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors.PNG" width="500" height="800">
 
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
