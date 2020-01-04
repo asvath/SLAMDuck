@@ -58,7 +58,7 @@ accurate to within a few millimeters. Our experiment was set up at DSL. Reflecti
 AprilTag as shown in, The positions of the static landmark AprilTags were acquired by vicon for 30 seconds and the results
 were averaged.
 
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/reflective_marker_robot.jpg" width="300" height="500">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/reflective_marker_robot.jpg" width="300" height="400">
 
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
