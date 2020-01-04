@@ -60,6 +60,12 @@ were averaged.
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/reflective_marker_robot.jpg" width="300" height="450"> <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/reflective_marker_landmark.jpg" width="300" height="450"> 
 
+### Results 
+We drove our Duckiebot around Duckietown for two loops in an anti-clockwise direction. The trajectory of our Duckiebot based on odometry
+and our motion model is shown in the figure below:
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/wheel_odometry.jpg" width="500" height="400">
+
+
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
 
