@@ -93,7 +93,7 @@ in the previous section. In addition, both errors are closer to staying within t
 symmetric. However, we see a decreased performance in our heading estimates. We conclude that setting a threshold on the range
 measurements improves the accuracy of our result. Correspondingly, we conclude that the nearer the landmark AprilTags are, the more accurate the range measurements are. As part of future work as discussed in Section IX, we should further investigate the threshold for range measurements. We could also improve our accuracy by increasing the number of AprilTag Landmarks and placing them closer together. An improved algorithm which uses a proportional uncertainty for the range measurements may also be possible.
 
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors.PNG" width="500" height="800">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors_90.PNG" width="500" height="800">
 
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
