@@ -72,6 +72,8 @@ position (0,0). The goal of running SLAMDuck is to correct this trajectory.
 After running SLAMDuck, we compared our corrected trajectory to the ground truth obtained from vicon. Final Results. The figure below shows the entirety of Duckiebot’s corrected trajectory in grey. The ground truth is shown in blue. We also plotted our landmark estimates as red circles and the ground truth landmark positions in blue. The ground truth was compared by forcing the t=0 timestep to overlap perfectly with the calculated trajectory. Our corrected trajectory shows the Duckiebot travelling around Duckietown for two loops. While the shape of the trajectory is similar to the ground truth, we see that our corrected trajectory is much bigger. In addition, our landmark positions are far from the ground truth position with average errors in the x and y directions of -0.27 m and -0.23 m respectively.
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/tracj.jpg" width="500" height="400">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors.PNG" width="300" height="450">
+
 
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
