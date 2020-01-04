@@ -43,6 +43,7 @@ Our Duckietown was built to according to the specifications described in the Duc
 https://docs.duckietown.org/daffy/opmanual_duckietown/out/dt_ops_preliminaries.html.
 
 Our final setup is as shown:
+
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/top_view_duckietown.jpg" width="500" height="400">
 
 We included cardboard buildings, trees, a pool and 5 toy ducks, as shown purely for aesthetic and entertainment purposes.
@@ -50,6 +51,14 @@ We included cardboard buildings, trees, a pool and 5 toy ducks, as shown purely 
 ### Data Acquision and preprocessing 
 We drove our Duckiebot around Duckietown for two loops in an anti-clockwise direction with start position as depicted in the figure above. The drive was done manually by utilizing the virtual joystick through the Duckietown shell. We logged the data at nominal rate of 30 Hz. The logged data comes in a rosbag (.bag). format containing the left and right velocities of the wheels and the images captured. As the wheel velocities and the images were acquired at different timestamps, we linearly interpolated the wheel velocities at the image observations timestamps. As part of preprocessing, the images were undistorted using the intrinsic camera calibration matrix and the distortion coefficients acquired during camera calibration. We then used the publicly available AprilTags detection library apriltags3
 https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images. The detection outputs the relative position of the tags with respect to the Duckiebot’s camera. Using the relative position of the tags we then calculated the range and bearing from the camera to the tags. The 15-degree tilt of our camera was taken into account during the calculations. The range and bearing information were then stored in text files to be used by the SLAMDuck algorithm during the correction step. Please see the code section for all code used to perform the steps described in this section
+
+### Vicon Ground Truth 
+To evaluate our algorithm, we acquired ground truth by using the vicon motion capture system available at the Dynamics Systems Laboratory (DSL) at the University of Toronto Institute for Aerospace Studies. The vicon motion capture system is
+accurate to within a few millimeters. Our experiment was set up at DSL. Reflective markers were attached to our Duckiebot and its pose was tracked at 300 Hz as it navigated Duckietown. In order to compare the pose estimate of our Duckiebot to the acquired ground truth data, we linearly interpolated the vicon data to the image observations timestamp. Reflective markers were also on our landmark
+AprilTag as shown in, The positions of the static landmark AprilTags were acquired by vicon for 30 seconds and the results
+were averaged.
+
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/reflective_marker_robot.jpg" width="300" height="600">
 
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
@@ -59,4 +68,4 @@ This section describes the code used to perform the Data Acquision and preproces
 * range and bearing calculation 
 
 
-linear
+
