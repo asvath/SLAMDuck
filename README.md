@@ -82,6 +82,13 @@ measurements.
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors.PNG" width="500" height="800">
 
+#### Analysis of range measurements
+We suspect that our range measurements suffer from a systematic error. The range measurements of AprilTag landmarks closer to the Duckiebot are probably more accurate than those further way due to inverse linear relationship between size and distance. To investigate this, we have run the SLAMDuck algorithm again, but only considering range measurements that are less than 90 cm away from our
+Duckiebot as compared to the previous section, where we used all measurements. Figure below shows an improved corrected trajectory of our Duckiebot. Our trajectory shows a smaller, less lopsided loop compared to that in the previous section.
+
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/trac_90.jpg" width="500" height="400">
+
+
 ### Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
 
