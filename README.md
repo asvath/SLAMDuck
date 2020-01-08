@@ -99,6 +99,15 @@ measurements improves the accuracy of our result. Correspondingly, we conclude t
 
 <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/errors_90.PNG" width="500" height="800">
 
+## Videos of Results
+
+This video shows our SLAMDuck trajectory vs. vicon ground truth. We used all of our measurements as discussed in the Evaluation of SLAMDuck section. 
+
+[![Alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/Capture_final_results.PNG)](https://www.youtube.com/watch?v=zgk5YCREUH8)
+
+This video shows our SLAMDuck trajectory vs, vicon ground truth. However, here we only consider range measurements that are less than 90 cm away from our Duckiebot as discussed in Analysis of range measurements. 
+[![Alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/Capture_final_results_90.PNG)](https://www.youtube.com/watch?v=OrM_QN1P5fI&t=7s)
+
 ## Future work
 Possible improvements to our experiment could entail installing wheel encoders to the system. Instead of wheel encoders, we could also try visual odometry to estimate the pose of the Duckiebot during the SLAMDuck prediction step. This approach will not add additional cost to the Duckiebot. We could also add more landmark AprilTags to improve the accuracy ofour estimates. We should also investigate the accuracy of the AprilTags detection library by physically measuring the range from our Duckiebot to the AprilTags and comparing it to the range obtained from the library. Next, the feasibility of running SLAMDuck in real time should be verified.
 
@@ -109,12 +118,6 @@ This section describes the code used to perform the Data Acquision and preproces
 * undistortion of images
 * range and bearing calculation 
 
-## Videos of Results
+## Duckietown Autonomous Group
 
-This video shows our SLAMDuck trajectory vs. vicon ground truth. We used all of our measurements as discussed in the Evaluation of SLAMDuck section. 
-
-[![Alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/Capture_final_results.PNG)](https://www.youtube.com/watch?v=zgk5YCREUH8)
-
-This video shows our SLAMDuck trajectory vs, vicon ground truth. However, here we only consider range measurements that are less than 90 cm away from our Duckiebot as discussed in Analysis of range measurements. 
-[![Alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/Capture_final_results_90.PNG)](https://www.youtube.com/watch?v=OrM_QN1P5fI&t=7s)
-
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/squad.png" width="500" height="400">
