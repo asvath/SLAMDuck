@@ -48,6 +48,10 @@ Our final setup is as shown:
 
 We included cardboard buildings, trees, a pool and 5 toy ducks, as shown purely for aesthetic and entertainment purposes.
 
+The video below shows our experimental setup:
+[![Alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/setup.PNG)](https://www.youtube.com/watch?v=59ch7SB2_Eg)
+
+
 ### Data Acquision and preprocessing 
 We drove our Duckiebot around Duckietown for two loops in an anti-clockwise direction with start position as depicted in the figure above. The drive was done manually by utilizing the virtual joystick through the Duckietown shell. We logged the data at nominal rate of 30 Hz. The logged data comes in a rosbag (.bag). format containing the left and right velocities of the wheels and the images captured. As the wheel velocities and the images were acquired at different timestamps, we linearly interpolated the wheel velocities at the image observations timestamps. As part of preprocessing, the images were undistorted using the intrinsic camera calibration matrix and the distortion coefficients acquired during camera calibration. We then used the publicly available AprilTags detection library apriltags3
 https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images. The detection outputs the relative position of the tags with respect to the Duckiebot’s camera. Using the relative position of the tags we then calculated the range and bearing from the camera to the tags. The 15-degree tilt of our camera was taken into account during the calculations. The range and bearing information were then stored in text files to be used by the SLAMDuck algorithm during the correction step. Please see the code section for all code used to perform the steps described in this section
