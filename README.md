@@ -120,4 +120,5 @@ This section describes the code used to perform the Data Acquision and preproces
 
 ## Duckietown Autonomous Group
 
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/squad.png" width="500" height="400">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/squad.png" width="600" height="500">
+Duckietown Autonomous Group: (from left) Quackaline Rao, Samantha Quacksome, Dr. Dorothy Duckworthy, Duckiebot Luthor, Lena Luthor and Supergirl.
