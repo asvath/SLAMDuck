@@ -17,7 +17,7 @@ To tackle the problem of SLAMDuck, we define the following frames:
 * Duckie frame, FD: frame that is attached to center between the left and right wheels of the Duckiebot. The x-axis is in the direction of the heading of the Duckiebot
 * Camera frame, Fc: frame that is attached to the Duckiebot’s camera and distance, d, away from FD. The orientation of Fc is the same as FD. All measurement of landmark AprilTags are made relative to Fc
 
-<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/frames.PNG" width="500" height="300"> <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/frames_setup.PNG" width="500" height="300">
+<img src="https://github.com/asvath/SLAMDuck/blob/master/pix/frames.PNG" width="500" height="300"> <img src="https://github.com/asvath/SLAMDuck/blob/master/pix/frames_setup.PNG" width="500" height="500">
 
 ### Motion Model
 The Duckiebot is a differential drive robot. Hence, using a differential drive model, we determine the translational, vk, and rotational, wk, velocities of the Duckiebot. Next, we define xk to be a 3 + 2N state vector consisting of the Duckiebot’s pose (x,y,theta), and each landmark’s position (lx,ly) at timestep, k; where l denotes the lth landmark. All the parameters in the state vector are relative to Fw. The motion model is then governed by:
