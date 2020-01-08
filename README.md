@@ -110,3 +110,7 @@ This section describes the code used to perform the Data Acquision and preproces
 This video shows our SLAMDuck trajectory vs. vicon ground truth. We used all of our measurements as discussed in the Evaluation of SLAMDuck section. 
 
 [![Alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/Capture_final_results.PNG)](https://www.youtube.com/watch?v=zgk5YCREUH8)
+
+This video shows our SLAMDuck trajectory vs, vicon ground truth. However, here we only consider range measurements that are less than 90 cm away from our Duckiebot as discussed in Analysis of range measurements. 
+[![Alt text](https://github.com/asvath/SLAMDuck/blob/master/pix/Capture_final_results_90.PNG)](https://www.youtube.com/watch?v=OrM_QN1P5fI&t=7s)
+
