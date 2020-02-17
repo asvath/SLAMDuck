@@ -169,7 +169,9 @@ b_var = 1e-3#(sensor) bearing variance
 This value ensures that our range and bearing measurements are actually wrt to the center between the two wheels.
 
 
-
+### h) Vicon interploation 
+### g) Vicon data cleaning
+### i) Vicon analysis
 
 ## Duckietown Autonomous Group
 
