@@ -170,8 +170,8 @@ This value ensures that our range and bearing measurements are actually wrt to t
 
 
 ### h) Vicon interploation 
-### g) Vicon data cleaning
-### i) Vicon analysis
+### i) Vicon data cleaning
+### j) Vicon analysis
 
 ## Duckietown Autonomous Group
 
