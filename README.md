@@ -1,5 +1,5 @@
 # SLAMDuck 
-We provide a brief description of our project. For details on the code, please see the Data acquision and Code sections below.
+We provide a brief description of our project. For details on the code, please see the Data acquision and Code sections below. We also provide our acquired data. This includes the data from our duckiebot and the corresponding vicon data (ground truth). The files will be uploaded soon. 
 
 ## Introduction
 The goal of our project is to explore the recursive Extended Kalman Filter (EKF) SLAM algorithm. In order to achieve this goal, we draw on our motivation to acquire hands-on robotics experience. We obtained a robotics starter kit from the Duckietown foundation (https://www.duckietown.org/). We utilized the starter kit to build a robot (Duckiebot) and a toy city
