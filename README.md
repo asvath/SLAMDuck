@@ -145,10 +145,29 @@ image_file_path : text file containing the timestamp of the images as described 
 This code outs 
 
 ### f) April Tag detection: apriltags3.py (modified)
-We used the publicly available AprilTags detection library apriltags3 https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images and made modifications store the outputs as jsonfiles. When running this code, ensure that undistorted_images_data_dir points to your undistorted images; and tag_detections_dir is your output dir  (see example json file: tags_detections_undistorted_frame000000.json)
+We used the publicly available AprilTags detection library apriltags3 https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images and made modifications to store the outputs as jsonfiles. When running this code, ensure that undistorted_images_data_dir points to your undistorted images; and tag_detections_dir is your output dir  (see example json file: tags_detections_undistorted_frame000000.json)
 
 ### f) Range and bearing calculation : read_tags.py
 Using the relative position of the tags, pose_t,  (stored in the jsonfiles described in f) we then calculated the range and bearing from the camera to the tags. Note that pose_t uses the usual computer vision convention with z-front, x-right, y-down. Our frames are defined according to the covention of z-up, x-right, y-front. All our calculations are expressed relative to our defined frames. The 15-degree tilt of our camera was taken into account during the calculations (rotation matrix called rotation) . For each image, we have the corresponding range and bearing measurements to the AprilTags present in the image. These measurements are stored as txt files per image, containing the tag_id, range and bearing measurements (see example txt file: range_bearing_frame000000.txt)
+
+### g) SLAMDuck.py
+Our SLAMDuck algorithm then follows the EKF SLAM algorithm described in S. Thrun, W. Burgard, and D. Fox Probabalistic Robotics (2005). chapter 10 page 314. Where our motion model is used in the prediction step and our measurement model is used in the correction step.
+motion model: uses the interpolated left and right wheel velocities, which we stored as text file
+measurement model: uses the range and bearing measurements calculated in f)
+
+Our algorithm outputs the estimate of the true pose of the Duckiebot at timesteps k1:k2 and the estimate of the true positions of the N static landmarks with respect to Fw (defined earlier). It also outputs the covariance elipse of the robot and the landmarks.
+
+Note : 
+- Play around with these parameters
+v_var = 0.5#velocity variance
+om_var = 0.5#rotational velocity variance
+r_var = 1e-3 #(sensor) range variance
+b_var = 1e-3#(sensor) bearing variance
+
+
+- d = 0.06 #distance between camera and axle 
+This value ensures that our range and bearing measurements are actually wrt to the center between the two wheels.
+
 
 
 
