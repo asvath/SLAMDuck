@@ -142,11 +142,14 @@ When running the code, change wheel_file_path, image_file_path and out_path to s
 wheel_file_path: text file of the left and right velocities and the timestamp. This textfile was produced in a)
 image_file_path : text file containing the timestamp of the images as described in b)
 
-### f) April Tag detection
-We used the publicly available AprilTags detection library apriltags3 https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images and made modifications store the outputs of the relative position of the tags with respect to the Duckiebot’s camera as jsonfiles. (see example json file: tags_detections_undistorted_frame000000.json)
+This code outs 
+
+### f) April Tag detection: apriltags3.py (modified)
+We used the publicly available AprilTags detection library apriltags3 https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images and made modifications store the outputs as jsonfiles. When running this code, ensure that undistorted_images_data_dir points to your undistorted images; and tag_detections_dir is your output dir  (see example json file: tags_detections_undistorted_frame000000.json)
 
 ### f) Range and bearing calculation : read_tags.py
-Using the relative position of the tags (stored as jsonfiles) we then calculated the range and bearing from the camera to the tags. The 15-degree tilt of our camera was taken into account during the calculations. For each image, we have the corresponding range and bearing measurements to the AprilTags present in the image. 
+Using the relative position of the tags, pose_t,  (stored in the jsonfiles described in f) we then calculated the range and bearing from the camera to the tags. Note that pose_t uses the usual computer vision convention with z-front, x-right, y-down. Our frames are defined according to the covention of z-up, x-right, y-front. All our calculations are expressed relative to our defined frames. The 15-degree tilt of our camera was taken into account during the calculations (rotation matrix called rotation) . For each image, we have the corresponding range and bearing measurements to the AprilTags present in the image. These measurements are stored as txt files per image, containing the tag_id, range and bearing measurements (see example txt file: range_bearing_frame000000.txt)
+
 
 
 ## Duckietown Autonomous Group
