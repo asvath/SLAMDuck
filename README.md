@@ -114,9 +114,40 @@ Possible improvements to our experiment could entail installing wheel encoders t
 ## Code
 This section describes the code used to perform the Data Acquision and preprocessing step:
 
-* linear interploation of wheels
-* undistortion of images
-* range and bearing calculation 
+### a) Write out wheel velocities stored in .bag as txt : my_node.py
+Ensure that topics points to the wheel_cmd, e.g : "/luthor/wheels_driver_node/wheels_cmd"
+Uncomment : #f.write(str(msg.vel_left) +" " + str(msg.vel_right) + " " + str(msg.header.stamp) + " \n")
+The code writes out a text file containing the left and right wheel velocities and the timestamp
+
+### b) Write out images stored in .bag as jpg : my_node.py
+Same code as writing out the wheel velocities. However, edit the code to ensure that the topics points to image/compressed
+e.g "/luthor/camera_node/image/compressed"
+Code outputs colour images from the duckiebot
+
+
+### c) Write out timestamp of images stored in .bag : my_node.py
+Edit the same code used above, this time write out a txt file containing the timestamps
+f.write(str(msg.header.stamp) +" \n")
+
+Note that the commends and code are self-explanatory and can be easily edited to perform the above tasks.
+
+### d) Undistort images : undistort_duckie_images.py
+The code undistorts the images acquired during data collection and output the undistorted colour images. The duckiebot uses a fisheye lens. However, we use a plumb bob model to perform the undistortion. Ensure that you are using the intrinsics acquired during camera calibration. 
+
+### e) Linear interploation of wheels : interplote_velocity.py
+The output wheel velocity and the output images are acquired at 30Hz. As the wheel velocities and the images
+were acquired at different timestamps, we linearly interpolated the wheel velocities at the image observations timestamps.
+
+When running the code, change wheel_file_path, image_file_path and out_path to suit your local directories
+wheel_file_path: text file of the left and right velocities and the timestamp. This textfile was produced in a)
+image_file_path : text file containing the timestamp of the images as described in b)
+
+### f) April Tag detection
+We used the publicly available AprilTags detection library apriltags3 https://github.com/duckietown/apriltags3-py to detect the landmark AprilTags in our images and made modifications store the outputs of the relative position of the tags with respect to the Duckiebot’s camera as jsonfiles. (see example json file: tags_detections_undistorted_frame000000.json)
+
+### f) Range and bearing calculation : read_tags.py
+Using the relative position of the tags (stored as jsonfiles) we then calculated the range and bearing from the camera to the tags. The 15-degree tilt of our camera was taken into account during the calculations. For each image, we have the corresponding range and bearing measurements to the AprilTags present in the image. 
+
 
 ## Duckietown Autonomous Group
 
